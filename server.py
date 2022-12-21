@@ -25,6 +25,11 @@ def update_inventory(item_id):
     return {"data": "ok"}
 
 
+@app.route('/', methods=['GET'])
+def inventory():
+    return {"inventory": data.inventory.retrieve_inventory()}
+
+
 @app.route('/inventory', methods=['GET'])
 def inventory():
     return {"inventory": data.inventory.retrieve_inventory()}
